@@ -1,6 +1,6 @@
-package collaborator.model;
+package br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.model;
 
-import department.model.DepartmentModel;
+import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.department.model.DepartmentModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,9 +22,17 @@ public class CollaboratorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false, unique = true)
     private String cpf;
+
+    @Column(nullable = false)
     private BigDecimal salary;
+
+    @Column(nullable = false)
     private LocalDate dateBirth;
 
     @ManyToOne

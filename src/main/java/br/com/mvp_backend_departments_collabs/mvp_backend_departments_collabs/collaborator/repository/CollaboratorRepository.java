@@ -1,6 +1,6 @@
-package collaborator.repository;
+package br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.repository;
 
-import collaborator.model.CollaboratorModel;
+import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.model.CollaboratorModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,7 @@
-package department.model;
+package br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.department.model;
 
-import collaborator.model.CollaboratorModel;
+import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.model.CollaboratorModel;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,14 +21,18 @@ public class DepartmentModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     private String name;
+
     private int dpRoomNumber;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "manager_id", unique = true)
     private CollaboratorModel departmentManager;
 
-    @OneToMany(mappedBy = "departmentModel")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "departmentModel", fetch = FetchType.LAZY)
     private List<CollaboratorModel> departmentCollaborators;
 
 }

@@ -20,11 +20,13 @@ import java.util.UUID;
 public class DepartmentModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID idDepartment;
 
-    private String name;
+    @Column(name = "name_department")
+    private String nameDepartment;
 
-    private int dpRoomNumber;
+    @Column(name = "room_number_department")
+    private int roomNumberDepartment;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(fetch = FetchType.LAZY)
@@ -32,7 +34,7 @@ public class DepartmentModel {
     private CollaboratorModel departmentManager;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "departmentModel", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<CollaboratorModel> departmentCollaborators;
 
 }

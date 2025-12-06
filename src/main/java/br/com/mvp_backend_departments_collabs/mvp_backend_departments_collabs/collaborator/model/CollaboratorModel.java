@@ -21,22 +21,22 @@ import java.util.UUID;
 public class CollaboratorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID idCollaborator;
 
-    @Column(nullable = false)
-    private String name;
+    @Column(name = "name_collaborator", nullable = false)
+    private String nameCollaborator;
 
-    @Column(nullable = false, unique = true)
-    private String cpf;
+    @Column(name = "cpf_collaborator", nullable = false, unique = true)
+    private String cpfCollaborator;
 
-    @Column(nullable = false)
-    private BigDecimal salary;
+    @Column(name = "salary_collaborator", nullable = false)
+    private BigDecimal salaryCollaborator;
 
-    @Column(nullable = false)
-    private LocalDate dateBirth;
+    @Column(name = "date_birth_collaborator", nullable = false)
+    private LocalDate dateBirthCollaborator;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
-    private DepartmentModel departmentModel;
+    private DepartmentModel department;
 
 }

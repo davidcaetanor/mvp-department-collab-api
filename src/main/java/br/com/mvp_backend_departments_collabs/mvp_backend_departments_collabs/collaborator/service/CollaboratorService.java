@@ -4,11 +4,7 @@ import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.co
 import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.mapper.CollaboratorMapper;
 import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.model.CollaboratorModel;
 import br.com.mvp_backend_departments_collabs.mvp_backend_departments_collabs.collaborator.repository.CollaboratorRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

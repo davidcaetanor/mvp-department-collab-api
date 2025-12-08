@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,6 +36,5 @@ public class DepartmentModel {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    private List<CollaboratorModel> departmentCollaborators;
-
+    private List<CollaboratorModel> departmentCollaborators =  new ArrayList<>();
 }
